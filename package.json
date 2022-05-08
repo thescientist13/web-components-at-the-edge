@@ -18,11 +18,11 @@
     "OpenJS World"
   ],
   "scripts": {
-    "clean": "rimraf ./public",
+    "clean": "rimraf ./public ./.greenwood",
     "develop": "greenwood develop",
     "build": "greenwood build",
-    "start": "yarn develop",
-    "serve": "yarn clean && greenwood serve"
+    "start": "npm run serve",
+    "serve": "npm run clean && greenwood serve"
   },
   "dependencies": {
     "lit": "^2.2.3"
@@ -30,6 +30,7 @@
   "devDependencies": {
     "@greenwood/cli": "~0.25.0",
     "@greenwood/plugin-import-css": "~0.25.0",
-    "greenwood-starter-presentation": "~0.6.0"
+    "greenwood-starter-presentation": "~0.6.0",
+    "rimraf": "^3.0.2"
   }
 }
