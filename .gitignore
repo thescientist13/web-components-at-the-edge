@@ -1,3 +1,4 @@
 .greenwood/
 node_modules/
 public/
+!demo/public

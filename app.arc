@@ -17,7 +17,13 @@ wc-at-the-edge
   src demo/get-demo2
 
 # progressive hydration
-# TODO
+/demo3
+  method get
+  src demo/get-demo3
+
+
+@static
+  folder demo/public
 
 @aws
 # profile default
