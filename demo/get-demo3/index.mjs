@@ -3,9 +3,9 @@ import { renderToString } from 'wc-compiler';
 import path from 'path';
 
 export async function handler () {
-  const { html: header, metadata: headerMeta } = await renderToString(new URL('./header.js', import.meta.url));
-  const { html: footer } = await renderToString(new URL('./footer.js', import.meta.url));
-  const { html: test, metadata: testMetadata } = await renderToString(new URL('./test.js', import.meta.url));
+  const { html: header, metadata: headerMeta } = await renderToString(new URL('./header.mjs', import.meta.url));
+  const { html: footer } = await renderToString(new URL('./footer.mjs', import.meta.url));
+  const { html: test, metadata: testMetadata } = await renderToString(new URL('./test.mjs', import.meta.url));
 
   const eagerJs = [];
   const lazyJs = [];

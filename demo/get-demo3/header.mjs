@@ -1,4 +1,4 @@
-import './navigation.js';
+import './navigation.mjs';
 
 class Header extends HTMLElement {
   constructor() {
