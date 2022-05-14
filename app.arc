@@ -10,9 +10,6 @@ wc-at-the-edge
   method get
   src demo/get-demo1
 
-@shared
-  src demo/shared
-
 @aws
 # profile default
 region us-east-1

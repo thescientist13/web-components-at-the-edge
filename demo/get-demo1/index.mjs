@@ -2,7 +2,7 @@
 import { renderToString } from 'wc-compiler';
 
 export async function handler () {
-  const { html } = await renderToString(new URL('./header.component.js', import.meta.url));
+  const { html } = await renderToString(new URL('./header.component.mjs', import.meta.url));
 
   return {
     statusCode: 200,
