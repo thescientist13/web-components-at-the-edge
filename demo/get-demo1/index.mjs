@@ -2,7 +2,8 @@
 import { renderToString } from 'wc-compiler';
 
 export async function handler () {
-  const { html } = await renderToString(new URL('./header.component.mjs', import.meta.url));
+  const { html: footer } = await renderToString(new URL('./footer.component.mjs', import.meta.url));
+  const { html: header } = await renderToString(new URL('./header.component.mjs', import.meta.url));
 
   return {
     statusCode: 200,
@@ -20,8 +21,12 @@ export async function handler () {
         </head>
         <body class="padding-32">
           <wcc-header>
-            ${html}
+            ${header}
           </wcc-header>
+
+          <wcc-footer>
+            ${footer}
+          </wcc-footer>
         </body>
       </html>
       `
