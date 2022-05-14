@@ -36,6 +36,7 @@
     "@greenwood/plugin-import-css": "~0.25.0",
     "eslint": "^8.15.0",
     "greenwood-starter-presentation": "~0.6.0",
+    "node-fetch": "^3.2.4",
     "rimraf": "^3.0.2",
     "wc-compiler": "^0.1.0"
   }
