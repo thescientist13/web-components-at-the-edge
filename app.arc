@@ -11,7 +11,7 @@ wc-at-the-edge
   method get
   src demo/get-demo1
 
-# from data source
+# data fetching, <slot>
 /demo2
   method get
   src demo/get-demo2
