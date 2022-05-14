@@ -3,6 +3,7 @@ import { renderToString } from 'wc-compiler';
 import path from 'path';
 
 export async function handler () {
+  const publicRoot = 'https://wcattheedgestaging-staticbucket-12jycv0hz50hc.s3.amazonaws.com';
   const { html: header, metadata: headerMeta } = await renderToString(new URL('./header.mjs', import.meta.url));
   const { html: footer } = await renderToString(new URL('./footer.mjs', import.meta.url));
   const { html: test, metadata: testMetadata } = await renderToString(new URL('./test.mjs', import.meta.url));
@@ -47,15 +48,21 @@ export async function handler () {
 
           ${
             eagerJs.map(script => {
-              const publicPath = `/components/${path.basename(script.moduleURL.pathname)}`;
+              const file = path.basename(script.moduleURL.pathname).replace('.mjs', '.js');
+              const publicPath = process.env.NODE_ENV === 'sandbox'
+                ? arc.static(`/components/${file}`)
+                : `${publicRoot}/components/${file}`;
 
-              return `<script type="module" src="${arc.static(publicPath)}"></script>`;
+              return `<script type="module" src="${publicPath}"></script>`;
             }).join('\n')
           }
         
           ${
             lazyJs.map(script => {
-              const publicPath = `/components/${path.basename(script.moduleURL.pathname)}`;
+              const file = path.basename(script.moduleURL.pathname).replace('.mjs', '.js');
+              const publicPath = process.env.NODE_ENV === 'sandbox'
+                ? arc.static(`/components/${file}`)
+                : `${publicRoot}/components/${file}`;
 
               return `
                 <script type="module">
@@ -74,7 +81,7 @@ export async function handler () {
                         if(!initialized && entry.isIntersecting) {
                           alert('Intersected ${script.tagName}, time to hydrate!!!');
                           initialized = true;
-                          import('${arc.static(publicPath)}');
+                          import('${publicPath}');
                         }
                       });
                     }

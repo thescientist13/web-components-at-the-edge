@@ -21,7 +21,7 @@
     "arc": "arc",
     "lint": "eslint \"*.*js\" \"./demo/**/**/*.*js\"",
     "clean": "rimraf ./public ./.greenwood",
-    "demo": "arc sandbox",
+    "demo": "export NODE_ENV=sandbox && arc sandbox",
     "develop": "greenwood develop",
     "build": "greenwood build",
     "start": "npm run serve",
