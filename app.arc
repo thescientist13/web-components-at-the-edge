@@ -11,6 +11,7 @@ wc-at-the-edge
   src demo/get-demo1
 
 @shared
+  src demo/shared
 
 @aws
 # profile default
