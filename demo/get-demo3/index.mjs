@@ -3,7 +3,7 @@ import { renderToString } from 'wc-compiler';
 import path from 'path';
 
 export async function handler () {
-  const publicRoot = 'https://wcattheedgestaging-staticbucket-12jycv0hz50hc.s3.amazonaws.com';
+  const publicRoot = '/';
   const { html: header, metadata: headerMeta } = await renderToString(new URL('./header.mjs', import.meta.url));
   const { html: footer } = await renderToString(new URL('./footer.mjs', import.meta.url));
   const { html: test, metadata: testMetadata } = await renderToString(new URL('./test.mjs', import.meta.url));
