@@ -51,7 +51,7 @@ export async function handler () {
               const file = path.basename(script.moduleURL.pathname).replace('.mjs', '.js');
               const publicPath = process.env.NODE_ENV === 'sandbox'
                 ? arc.static(`/components/${file}`)
-                : `${publicRoot}/components/${file}`;
+                : `${publicRoot}components/${file}`;
 
               return `<script type="module" src="${publicPath}"></script>`;
             }).join('\n')
@@ -62,7 +62,7 @@ export async function handler () {
               const file = path.basename(script.moduleURL.pathname).replace('.mjs', '.js');
               const publicPath = process.env.NODE_ENV === 'sandbox'
                 ? arc.static(`/components/${file}`)
-                : `${publicRoot}/components/${file}`;
+                : `${publicRoot}components/${file}`;
 
               return `
                 <script type="module">
