@@ -3,7 +3,7 @@ name: Main Integration
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
 
