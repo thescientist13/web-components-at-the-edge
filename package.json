@@ -18,7 +18,10 @@
     "OpenJS World"
   ],
   "scripts": {
+    "arc": "arc",
+    "lint": "eslint \"*.*js\" \"./demo/**/**/*.*js\"",
     "clean": "rimraf ./public ./.greenwood",
+    "demo": "export NODE_ENV=sandbox && arc sandbox",
     "develop": "greenwood develop",
     "build": "greenwood build",
     "start": "npm run serve",
@@ -28,9 +31,14 @@
     "lit": "^2.2.3"
   },
   "devDependencies": {
+    "@architect/architect": "^10.3.3",
+    "@architect/functions": "^5.1.0",
     "@greenwood/cli": "~0.25.0",
     "@greenwood/plugin-import-css": "~0.25.0",
+    "eslint": "^8.15.0",
     "greenwood-starter-presentation": "~0.6.0",
-    "rimraf": "^3.0.2"
+    "node-fetch": "^3.2.4",
+    "rimraf": "^3.0.2",
+    "wc-compiler": "^0.1.0"
   }
 }

@@ -1,3 +1,5 @@
 .greenwood/
 node_modules/
+preferences.arc
 public/
+!demo/public
