@@ -8,6 +8,8 @@ Slides for my virtual track talk at [OpenJS World (2022)](https://events.linuxfo
 
 ## Running Locally
 
+### Setup
+
 If you would like to run this project locally
 1. Have [NodeJS](https://nodejs.org/) LTS installed
 1. Clone or fork this repo
@@ -16,9 +18,13 @@ If you would like to run this project locally
     # npm
     $ npm ci
     ```
-1. Start the server!
-    ```sh
-    $ npm start
-    ```
+
+### Presentation
+To run the slide locally, run `npm start`
 
 You can now run the deck by opening `localhost:8080` in your browser.
+
+### Demo
+The full demo environment for the presentation is hosted [here](https://wc-at-the-edge.thegreenhouse.io/).
+
+To run the demo locally, run `npm demo`.
