@@ -25,6 +25,11 @@ To run the slide locally, run `npm start`
 You can now run the deck by opening `localhost:8080` in your browser.
 
 ### Demo
-The full demo environment for the presentation is hosted [here](https://wc-at-the-edge.thegreenhouse.io/).
 
-To run the demo locally, run `npm demo`.
+The full demo environment for the presentation is hosted [here](https://wc-at-the-edge.thegreenhouse.io/).  The preview environment for PRs is available [here](https://preview-wc-at-the-edge.thegreenhouse.io/).
+
+#### Local
+To view the demo locally, run
+```sh
+$ npm demo
+```
