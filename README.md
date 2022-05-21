@@ -14,10 +14,7 @@ If you would like to run this project locally
 1. Install dependencies
     ```sh
     # npm
-    $ npm i
-
-    # yarn
-    $ yarn install
+    $ npm ci
     ```
 1. Start the server!
     ```sh
