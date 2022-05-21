@@ -1,0 +1,9 @@
+@import 'https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/themes/prism-twilight.min.css';
+
+pre[class*=language-], code[class*=language-]{
+  padding: .25em;
+  margin: 1em!important;
+  display: block;
+  max-width: 98%;
+  margin: 0 auto;
+}

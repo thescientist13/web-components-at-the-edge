@@ -6,6 +6,12 @@ export default {
   plugins: [
     ...greenwoodPluginImportCss(),
     ...greenwoodThemeStarterPresentation()
-  ]
+  ],
+
+  markdown: {
+    plugins: [
+      '@mapbox/rehype-prism'
+    ]
+  }
 
 };
