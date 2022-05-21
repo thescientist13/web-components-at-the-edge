@@ -1,0 +1,16 @@
+@import './variables.css';
+
+p {
+  margin: 0 auto;
+  padding-left: 7%;
+}
+
+img {
+  width: 100%!important;
+  max-height: 80%;
+  filter: drop-shadow(0 0 0.75rem var(--color-accent));
+}
+
+a {
+  color: var(--color-accent);
+}

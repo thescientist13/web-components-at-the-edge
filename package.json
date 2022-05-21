@@ -35,6 +35,7 @@
     "@architect/functions": "^5.1.0",
     "@greenwood/cli": "~0.25.0",
     "@greenwood/plugin-import-css": "~0.25.0",
+    "@mapbox/rehype-prism": "^0.8.0",
     "eslint": "^8.15.0",
     "greenwood-starter-presentation": "~0.6.0",
     "node-fetch": "^3.2.4",
