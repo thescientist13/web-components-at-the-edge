@@ -19,7 +19,7 @@
   ],
   "scripts": {
     "arc": "arc",
-    "lint": "eslint \"*.*js\" \"./demo/**/**/*.*js\"",
+    "lint": "eslint \"*.*js\" \"./demo/**/**/*.*js\" \"./netlify/**/**/*.*js\"",
     "clean": "rimraf ./public ./.greenwood",
     "demo": "export NODE_ENV=sandbox && arc sandbox",
     "develop": "greenwood develop",

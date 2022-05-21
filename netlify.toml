@@ -7,3 +7,7 @@
 
 [build.environment]
   NODE_VERSION = "16.15.0"
+
+[[edge_functions]]
+  function = "hello"
+  path = "/test"
