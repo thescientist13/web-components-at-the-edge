@@ -4,15 +4,15 @@ import path from 'path';
 
 export async function handler () {
   const publicRoot = '/';
-  const { html: header, metadata: headerMeta } = await renderToString(new URL('./node_modules/@architect/shared/components/header.js', import.meta.url));
-  const { html: footer } = await renderToString(new URL('./node_modules/@architect/shared/components/footer.js', import.meta.url));
-  const { html: test, metadata: testMetadata } = await renderToString(new URL('./node_modules/@architect/shared/components/test.js', import.meta.url));
+  const { html: header, metadata: headerMeta } = await renderToString(new URL('./node_modules/@architect/shared/components/header.mjs', import.meta.url));
+  const { html: footer } = await renderToString(new URL('./node_modules/@architect/shared/components/footer.mjs', import.meta.url));
+  const { html: slider, metadata: sliderMetadata } = await renderToString(new URL('./node_modules/@architect/shared/components/slider.mjs', import.meta.url));
 
   const eagerJs = [];
   const lazyJs = [];
 
-  for (const asset in testMetadata) {
-    const a = testMetadata[asset];
+  for (const asset in sliderMetadata) {
+    const a = sliderMetadata[asset];
 
     a.tagName = asset;
 
@@ -48,7 +48,7 @@ export async function handler () {
 
           ${
             eagerJs.map(script => {
-              const file = path.basename(script.moduleURL.pathname).replace('.mjs', '.js');
+              const file = path.basename(script.moduleURL.pathname);
               const publicPath = process.env.NODE_ENV === 'sandbox'
                 ? arc.static(`/components/${file}`)
                 : `${publicRoot}components/${file}`;
@@ -59,7 +59,7 @@ export async function handler () {
         
           ${
             lazyJs.map(script => {
-              const file = path.basename(script.moduleURL.pathname).replace('.mjs', '.js');
+              const file = path.basename(script.moduleURL.pathname);
               const publicPath = process.env.NODE_ENV === 'sandbox'
                 ? arc.static(`/components/${file}`)
                 : `${publicRoot}components/${file}`;
@@ -105,9 +105,9 @@ export async function handler () {
 
           <p id="spacer"></p>
 
-          <wc-test color="green">
-            ${test}
-          </wc-test>
+          <wc-slider color="green">
+            ${slider}
+          </wc-slider>
 
           <wc-footer>
             ${footer}
