@@ -1,9 +1,4 @@
-import { renderToString } from 'wc-compiler';
-
 export async function handler () {
-  const { html: footer } = await renderToString(new URL('./footer.component.mjs', import.meta.url));
-  const { html: header } = await renderToString(new URL('./header.component.mjs', import.meta.url));
-
   return {
     statusCode: 200,
     headers: {
@@ -20,14 +15,39 @@ export async function handler () {
         </head>
         <body class="padding-32">
           <wcc-header>
-            ${header}
+            <template shadowroot="open">
+              <style>
+                h1 {
+                  text-align: center;
+                  color: green;
+                }
+              </style>
+            
+              <header>
+                <h1>Hello WC @ The Edge!</h1>
+              </header>
+            </template>
           </wcc-header>
 
           <wcc-footer>
-            ${footer}
+            <template shadowroot="open">
+              <style>
+                footer {
+                  text-align: center;
+                }
+            
+                span {
+                  color: purple;
+                }
+              </style>
+            
+              <footer>
+                <span>&copy; ${ new Date().getFullYear() }</span>
+              </footer>
+            </template>
           </wcc-footer>
         </body>
       </html>
-      `
+    `
   };
 }

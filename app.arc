@@ -25,6 +25,9 @@ wc-at-the-edge
 @static
   folder serverless/public
 
+@shared
+  src serverless/public
+
 @aws
 # profile default
 region us-east-1

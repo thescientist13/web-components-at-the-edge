@@ -14,7 +14,7 @@ export async function handler () {
     `;
   }).join('')}
   `, [
-    new URL('./card.component.mjs', import.meta.url)
+    new URL('../public/components/card.js', import.meta.url)
   ]);
 
   return {
