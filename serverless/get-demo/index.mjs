@@ -32,7 +32,7 @@ export async function handler () {
         <body>
           <header>
             <h1>Web Components @ The Edge</h1>
-            <h2>(Serverless Demo)</h2>
+            <h2>(Serverless Demos)</h2>
           </header>
           <div>
             <ul>

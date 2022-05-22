@@ -70,7 +70,7 @@ export default async function handler () {
       <body>
         <header>
           <h1>Web Components @ The Edge</h1>
-          <h2>(Edge Demo)</h2>
+          <h2>(Edge Demos)</h2>
         </header>
         <div>
           <ul>
