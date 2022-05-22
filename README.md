@@ -39,8 +39,8 @@ There are three paths available for this demo
 
 #### Live
 This demo has two live environments:
-- [Production](https://wc-at-the-edge.thegreenhouse.io/) (used in the presentation)
-- [Preview](https://preview-wc-at-the-edge.thegreenhouse.io/) (preview environment for PRs)
+- [Production](https://wc-at-the-edge.thegreenhouse.io/demo) (used in the presentation)
+- [Preview](https://preview-wc-at-the-edge.thegreenhouse.io/demo) (preview environment for PRs)
 
 #### Local
 To view the demo locally to start Architect's sandbox, run
@@ -57,7 +57,7 @@ There are three paths available for this demo
 
 #### Live
 This demo has two live environments:
-- [Production](https://magnificent-caramel-f19440.netlify.app/) (used in the presentation and shares the same environment)
+- [Production](https://magnificent-caramel-f19440.netlify.app/demo) (used in the presentation and shares the same environment)
 - Preview - For PRs, and will be dependent on PR preview URL.
 
 #### Local
