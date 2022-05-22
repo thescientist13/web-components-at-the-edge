@@ -4,9 +4,9 @@ import path from 'path';
 
 export async function handler () {
   const publicRoot = '/';
-  const { html: header, metadata: headerMeta } = await renderToString(new URL('../public/components/header.js', import.meta.url));
-  const { html: footer } = await renderToString(new URL('../public/components/footer.js', import.meta.url));
-  const { html: test, metadata: testMetadata } = await renderToString(new URL('../public/components/test.js', import.meta.url));
+  const { html: header, metadata: headerMeta } = await renderToString(new URL('./node_modules/@architect/shared/components/header.js', import.meta.url));
+  const { html: footer } = await renderToString(new URL('./node_modules/@architect/shared/components/footer.js', import.meta.url));
+  const { html: test, metadata: testMetadata } = await renderToString(new URL('./node_modules/@architect/shared/components/test.js', import.meta.url));
 
   const eagerJs = [];
   const lazyJs = [];

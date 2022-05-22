@@ -14,7 +14,7 @@ export async function handler () {
     `;
   }).join('')}
   `, [
-    new URL('../public/components/card.js', import.meta.url)
+    new URL('./node_modules/@architect/shared/components/card.js', import.meta.url)
   ]);
 
   return {
