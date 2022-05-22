@@ -29,7 +29,7 @@ There are two runtimes used for the demo section of this talk:
 - _Serverless_ - Using [**Architect**](https://arc.codes/), a serverless framework for **AWS** 
 - _Edge Functions_ - Powered by [**Netlify** running Deno](https://docs.netlify.com/netlify-labs/experimental-features/edge-functions/)
 
-> **Note**: All demos use my project [**wcc**](https://github.com/thescientist13/wcc/) for rendering native custom elements.
+> **Note**: All demos use my project [**wcc**](https://github.com/thescientist13/wcc/) for rendering native custom elements.  It is still a WIP, so some minor refactoring may be ongoing.
 
 ### Serverless
 There are three paths available for this demo
