@@ -1,4 +1,5 @@
 .greenwood/
+.netlify/
 node_modules/
 preferences.arc
 public/

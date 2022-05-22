@@ -6,9 +6,7 @@ Slides for my virtual track talk at [OpenJS World (2022)](https://events.linuxfo
 
 > _To operate the deck in full screen, click the "Presenter mode" button and use the left and right arrows keys to navigate through the slides.  Hit `ESC` to exit presenter mode._
 
-## Running Locally
-
-### Setup
+## Local Setup
 
 If you would like to run this project locally
 1. Have [NodeJS](https://nodejs.org/) LTS installed
@@ -19,17 +17,47 @@ If you would like to run this project locally
     $ npm ci
     ```
 
-### Presentation
+## Presentation
 To run the slide locally, run `npm start`
 
 You can now run the deck by opening `localhost:8080` in your browser.
 
-### Demo
+## Demo
 
-The full demo environment for the presentation is hosted [here](https://wc-at-the-edge.thegreenhouse.io/).  The preview environment for PRs is available [here](https://preview-wc-at-the-edge.thegreenhouse.io/).
+There are three paths available per demo
+- `/demo1` (basic example)
+- `/demo2` (example with data fetching)
+- `/demo3` (example with progressive hydration)
+
+> **Note**: Edge demo only contains examples 1 and 2, and does not use **wc-compiler** at this time.
+
+### Serverless
+The serverless demo is implemented using **Architect**, a serverless framework for **AWS**.  A technical diagram can be found in the presentation.
+
+#### Live
+This demo has two live environments:
+- [Production](https://wc-at-the-edge.thegreenhouse.io/) (used in the presentation)
+- [Preview](https://preview-wc-at-the-edge.thegreenhouse.io/) (preview environment for PRs)
 
 #### Local
-To view the demo locally, run
+To view the demo locally to start Architect's sandbox, run
 ```sh
-$ npm demo
+$ npm demo:serverless
+```
+
+### Edge
+
+The edge demo is implemented using **Netlify Edge Functions**, powered by **Deno**.
+
+#### Live
+This demo has two live environments:
+- [Production](https://magnificent-caramel-f19440.netlify.app/) (used in the presentation and shares the same environment)
+- Preview - For PRs, and will be dependent on PR preview URL.
+
+The serverless demo environment for the presentation is hosted [TBD]().
+
+#### Local
+To view the demo locally to start Netlify's sandbox, run
+```sh
+$ npm demo:edge
 ```

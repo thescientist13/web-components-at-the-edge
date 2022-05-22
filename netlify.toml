@@ -11,3 +11,11 @@
 [[edge_functions]]
   function = "hello"
   path = "/test"
+
+[[edge_functions]]
+  function = "demo1"
+  path = "/demo1"
+
+[[edge_functions]]
+  function = "demo2"
+  path = "/demo2"
