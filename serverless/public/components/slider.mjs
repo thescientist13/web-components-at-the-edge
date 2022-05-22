@@ -3,7 +3,7 @@ const template = document.createElement('template');
 template.innerHTML = `
   <style>
     h6 {
-      color: red;
+      color: var(--color-secondary);
       font-size: 25px;
     }
 
