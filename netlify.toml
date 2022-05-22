@@ -19,3 +19,7 @@
 [[edge_functions]]
   function = "demo2"
   path = "/demo2"
+
+[[edge_functions]]
+  function = "demo3"
+  path = "/demo3"
