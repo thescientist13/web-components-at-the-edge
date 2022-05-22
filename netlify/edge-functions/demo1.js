@@ -1,5 +1,15 @@
-export default async function () {
+import '../../node_modules/wc-compiler/src/dom-shim.js';
 
+import Footer from './components/footer.js';
+import Header from './components/header.js';
+
+export default async function () {
+  const footer = new Footer();
+  const header = new Header();
+
+  footer.connectedCallback();
+  header.connectedCallback();
+  
   const response = new Response(`
     <!DOCTYPE html>
     <html lang='en'>
@@ -10,33 +20,11 @@ export default async function () {
       </head>
       <body class='padding-32'>
         <wc-header>
-          <template shadowroot='open'>
-            <style>
-              h1 {
-                text-align: center;
-              }
-            </style>
-            <header>
-              <h1>Hello WC @ The Edge!</h1>
-            </header>
-          </template>
+          ${header.getInnerHTML({ includeShadowRoots: true })}
         </wc-header>
 
         <wc-footer>
-          <template shadowroot='open'>
-            <style>
-              footer {
-                text-align: center;
-              }
-          
-              span {
-                color: purple;
-              }
-            </style>
-            <footer>
-              <span>&copy; ${ new Date().getFullYear() }</span>
-            </footer>
-          </template>
+          ${footer.getInnerHTML({ includeShadowRoots: true })}
         </wc-footer>
       </body>
     </html>

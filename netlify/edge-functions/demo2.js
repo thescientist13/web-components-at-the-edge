@@ -1,24 +1,17 @@
+import '../../node_modules/wc-compiler/src/dom-shim.js';
+
+import Card from './components/card.js';
+
 export default async function () {
   const artists = await fetch('https://www.analogstudios.net/api/artists').then(resp => resp.json());
+  const card = new Card();
+
+  card.connectedCallback();
+  
   const html = artists.map(artist => {
     return `
       <wc-card>
-        <template shadowroot="open">
-          <style>
-            [name="title"] {
-              color: green;
-            }
-        
-            ::slotted(img) {
-              max-width: 500px;
-            }
-          </style>
-    
-          <div class="card">
-            <slot name="title">My default title</slot>
-            <slot name="image"></slot>
-          </div>
-        </template>
+        ${card.getInnerHTML({ includeShadowRoots: true })}
 
         <h2 slot="title">${artist.name}</h2>
         <img slot="image" src="${artist.imageUrl}" alt="${artist.name}"/>
