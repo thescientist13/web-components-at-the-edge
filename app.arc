@@ -6,6 +6,11 @@ wc-at-the-edge
   method get
   src serverless/get-index
 
+# Demo Table of Contents
+/demo
+  method get
+  src serverless/get-demo
+
 # basic example
 /demo1
   method get
@@ -20,7 +25,6 @@ wc-at-the-edge
 /demo3
   method get
   src serverless/get-demo3
-
 
 @static
   folder serverless/public
