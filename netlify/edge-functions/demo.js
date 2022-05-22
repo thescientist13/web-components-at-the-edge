@@ -76,7 +76,7 @@ export default async function handler () {
           <ul>
             <li>- <a href="/demo1" alt="Demo for basic example">Demo #1 (basic example)</a></li>
             <li>- <a href="/demo2" alt="Demo for data fetching example">Demo #2 (data fetching example)</a></li>
-            <li>- <a href="/demo3" alt="Demo for progressive hydration">Demo #3 (progressive hydration example)</a></li>
+            <li>- <a href="/demo3" alt="Demo for geolocation">Demo #3 (geolocation example)</a></li>
           </ol>
         </div>
       </body>
