@@ -18,21 +18,24 @@ If you would like to run this project locally
     ```
 
 ## Presentation
-To run the slide locally, run `npm start`
+To run the slides locally, run `npm start`
 
-You can now run the deck by opening `localhost:8080` in your browser.
+You can now view the slide deck by opening `localhost:8080` in your browser.
 
 ## Demo
 
-There are three paths available per demo
-- `/demo1` (basic example)
-- `/demo2` (example with data fetching)
-- `/demo3` (example with progressive hydration)
+There are two runtimes used for the demo section of this talk:
 
-> **Note**: Edge demo only contains examples 1 and 2, and does not use **wc-compiler** at this time.
+- _Serverless_ - Using [**Architect**](https://arc.codes/), a serverless framework for **AWS** 
+- _Edge Functions_ - Powered by [**Netlify** running Deno](https://docs.netlify.com/netlify-labs/experimental-features/edge-functions/)
+
+> **Note**: All demos use my project [**wcc**](https://github.com/thescientist13/wcc/) for rendering native custom elements.
 
 ### Serverless
-The serverless demo is implemented using **Architect**, a serverless framework for **AWS**.  A technical diagram can be found in the presentation.
+There are three paths available for this demo
+- `/demo1` - Basic example
+- `/demo2` - Example with data fetching
+- `/demo3` - Example with progressive hydration
 
 #### Live
 This demo has two live environments:
@@ -47,14 +50,15 @@ $ npm demo:serverless
 
 ### Edge
 
-The edge demo is implemented using **Netlify Edge Functions**, powered by **Deno**.
+There are three paths available for this demo
+- `/demo1` Basic example
+- `/demo2` Example with data fetching
+- `/demo3` Example with geo-location
 
 #### Live
 This demo has two live environments:
 - [Production](https://magnificent-caramel-f19440.netlify.app/) (used in the presentation and shares the same environment)
 - Preview - For PRs, and will be dependent on PR preview URL.
-
-The serverless demo environment for the presentation is hosted [TBD]().
 
 #### Local
 To view the demo locally to start Netlify's sandbox, run
