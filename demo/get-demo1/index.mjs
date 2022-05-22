@@ -1,4 +1,3 @@
-// learn more about HTTP functions here: https://arc.codes/http
 import { renderToString } from 'wc-compiler';
 
 export async function handler () {
