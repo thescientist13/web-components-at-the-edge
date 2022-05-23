@@ -1,3 +1,62 @@
+const template = document.createElement('template');
+
+template.innerHTML = `
+  <style>
+    header {
+      background-color: var(--color-secondary);
+      color: white;
+      text-decoration: underline;
+      text-align: center;
+      display: grid;
+      grid-auto-flow: row;
+      grid-template-columns: repeat(3, 1fr);
+      padding: 10px 0;
+    }
+
+    h1, h2 {
+      margin: 0;
+      padding: 0;
+    }
+
+    .header img.github-badge {
+      display: inline-block;
+      width: 90px;
+      height: 20px;
+    }
+
+    img.logo {
+      width: 50%;
+    }
+
+    button {
+      cursor: pointer;
+    }
+  </style>
+
+  <header>
+    <div>
+      <a href="https://github.com/ProjectEvergreen/wcc" target="_blank" rel="noopener noreferrer">
+        <img class="logo" src="https://magnificent-caramel-f19440.netlify.app/assets/wcc-logo.png" alt="WCC logo"/>
+      </a>
+    </div>
+
+    <div class="content">
+      <h1>Web Components @ The Edge</h1>
+      <h2>(Demo #3)</h2>
+      <button>Button To Click</button>
+    </div>
+
+    <div class="social">
+      <a href="https://github.com/ProjectEvergreen/wcc" target="_blank" rel="noopener noreferrer">
+        <img
+          src="https://img.shields.io/github/stars/ProjectEvergreen/wcc.svg?style=social&logo=github&label=github"
+          alt="WCC GitHub badge"
+          class="github-badge"/>
+      </a>
+    </div>
+  </header>
+`;
+
 class Header extends HTMLElement {
   constructor() {
     super();
@@ -12,67 +71,12 @@ class Header extends HTMLElement {
   connectedCallback() {
     if (!this.shadowRoot) {
       this.attachShadow({ mode: 'open' });
-      this.shadowRoot.innerHTML = this.render();
+      this.shadowRoot.appendChild(template.content.cloneNode(true));
     }
   }
 
   toggle() {
     alert('this.toggle clicked!');
-  }
-
-  render() {
-    return `
-      <style>
-        header {
-          background-color: var(--color-secondary);
-          color: white;
-          text-decoration: underline;
-          text-align: center;
-          display: grid;
-          grid-auto-flow: row;
-          grid-template-columns: repeat(3, 1fr);
-          padding: 10px 0;
-        }
-
-        h1, h2 {
-          margin: 0;
-          padding: 0;
-        }
-
-        .header img.github-badge {
-          display: inline-block;
-          width: 90px;
-          height: 20px;
-        }
-
-        button {
-          cursor: pointer;
-        }
-      </style>
-
-      <header>
-        <div>
-          <a href="/">
-            <img src="https://magnificent-caramel-f19440.netlify.app//assets/wcc-logo.jpg" alt="WCC logo"/>
-          </a>
-        </div>
-
-        <div class="content">
-          <h1>Web Components @ The Edge</h1>
-          <h2>(Demo #3)</h2>
-          <button>Button To Click</button>
-        </div>
-
-        <div class="social">
-          <a href="https://github.com/ProjectEvergreen/greenwood">
-            <img
-              src="https://img.shields.io/github/stars/ProjectEvergreen/greenwood.svg?style=social&logo=github&label=github"
-              alt="Greenwood GitHub badge"
-              class="github-badge"/>
-          </a>
-        </div>
-      </header>
-    `;
   }
 }
 
