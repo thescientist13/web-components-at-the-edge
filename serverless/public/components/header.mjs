@@ -45,6 +45,10 @@ class Header extends HTMLElement {
           height: 20px;
         }
 
+        img.logo {
+          width: 50%;
+        }
+
         button {
           cursor: pointer;
         }
@@ -52,8 +56,8 @@ class Header extends HTMLElement {
 
       <header>
         <div>
-          <a href="/">
-            <img src="https://magnificent-caramel-f19440.netlify.app//assets/wcc-logo.jpg" alt="WCC logo"/>
+          <a href="https://github.com/ProjectEvergreen/wcc" target="_blank" rel="noopener noreferrer">
+            <img class="logo" src="https://magnificent-caramel-f19440.netlify.app/assets/wcc-logo.png" alt="WCC logo"/>
           </a>
         </div>
 
@@ -64,10 +68,10 @@ class Header extends HTMLElement {
         </div>
 
         <div class="social">
-          <a href="https://github.com/ProjectEvergreen/greenwood">
+          <a href="https://github.com/ProjectEvergreen/wcc" target="_blank" rel="noopener noreferrer">
             <img
-              src="https://img.shields.io/github/stars/ProjectEvergreen/greenwood.svg?style=social&logo=github&label=github"
-              alt="Greenwood GitHub badge"
+              src="https://img.shields.io/github/stars/ProjectEvergreen/wcc.svg?style=social&logo=github&label=github"
+              alt="WCC GitHub badge"
               class="github-badge"/>
           </a>
         </div>

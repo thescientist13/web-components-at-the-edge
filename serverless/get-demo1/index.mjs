@@ -21,7 +21,7 @@ export async function handler () {
           <link rel="stylesheet" href="${cssPath}"/>
         </head>
         <body>
-          <wcc-header>
+          <wc-header>
             <template shadowroot="open">
               <style>
                 header {
@@ -47,13 +47,13 @@ export async function handler () {
                 <h2>(Demo #1)</h2>
               </header>
             </template>
-          </wcc-header>
+          </wc-header>
 
           <main>
             <h3>Hello WC @ The Edge! 👋</h3>
           </main>
 
-          <wcc-footer>
+          <wc-footer>
             <template shadowroot="open">
               <style>
                 footer {
@@ -70,7 +70,7 @@ export async function handler () {
                 <span>&copy; ${ new Date().getFullYear() }</span>
               </footer>
             </template>
-          </wcc-footer>
+          </wc-footer>
         </body>
       </html>
     `
