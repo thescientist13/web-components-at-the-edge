@@ -3,7 +3,7 @@ const template = document.createElement('template');
 template.innerHTML = `
   <style>
     h6 {
-      color: red;
+      color: var(--color-secondary);
       font-size: 25px;
     }
 
@@ -24,10 +24,10 @@ template.innerHTML = `
     }
   </style>
 
-  <h6>This is a test</h6>
+  <h6>This is a slider component.</h6>
 `;
 
-class TestComponent extends HTMLElement {
+class SliderComponent extends HTMLElement {
   connectedCallback() {
     if (!this.shadowRoot) {
       this.attachShadow({ mode: 'open' });
@@ -41,7 +41,7 @@ class TestComponent extends HTMLElement {
   }
 }
 
-export { TestComponent };
-export default TestComponent;
+export { SliderComponent };
+export default SliderComponent;
 
-customElements.define('wc-test', TestComponent);
+customElements.define('wc-slider', SliderComponent);

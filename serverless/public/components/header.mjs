@@ -16,6 +16,10 @@ class Header extends HTMLElement {
     }
   }
 
+  toggle() {
+    alert('this.toggle clicked!');
+  }
+
   render() {
     return `
       <style>
@@ -55,7 +59,8 @@ class Header extends HTMLElement {
 
         <div class="content">
           <h1>Web Components @ The Edge</h1>
-          <slot name="demo"></slot>
+          <h2>(Demo #3)</h2>
+          <button>Button To Click</button>
         </div>
 
         <div class="social">

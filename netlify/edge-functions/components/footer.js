@@ -2,12 +2,17 @@ const template = document.createElement('template');
 
 template.innerHTML = `
   <style>
-    footer {
+    :host {
+      color: var(--color-accent);
+      bottom: 0;
+      width: 100%;
+      min-height: 30px;
+      padding-top: 10px;
       text-align: center;
     }
 
-    span {
-      color: purple;
+    footer {
+      background-color: #192a27;
     }
   </style>
 

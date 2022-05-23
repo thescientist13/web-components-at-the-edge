@@ -13,6 +13,10 @@
   path = "/test"
 
 [[edge_functions]]
+  function = "demo"
+  path = "/demo"
+
+[[edge_functions]]
   function = "demo1"
   path = "/demo1"
 

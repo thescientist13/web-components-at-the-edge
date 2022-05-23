@@ -20,7 +20,7 @@
   "scripts": {
     "arc": "arc",
     "netlify": "netlify",
-    "lint": "eslint \"*.*js\" \"./demo/**/**/*.*js\" \"./netlify/**/**/*.*js\"",
+    "lint": "eslint \"*.*js\" \"./serverless/**/**/*.*js\" \"./netlify/**/**/*.*js\"",
     "clean": "rimraf ./public ./.greenwood",
     "demo:serverless": "export NODE_ENV=sandbox && arc sandbox",
     "demo:edge": "npm run netlify dev",

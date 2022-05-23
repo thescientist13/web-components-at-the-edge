@@ -28,17 +28,20 @@ class Greeting extends HTMLElement {
         <style>
           h1 {
             text-align: center;
+            color: var(--color-secondary);
           }
       
           span {
-            color: green;
+            color: var(--color-accent);
             font-style: italic;
           }
+
 
           [name="details"] {
             width: 80%;
             margin: 0 auto;
             text-align: center;
+            color: var(--color-accent);
           }
         </style>
 

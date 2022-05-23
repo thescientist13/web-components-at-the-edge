@@ -26,8 +26,8 @@ You can now view the slide deck by opening `localhost:8080` in your browser.
 
 There are two runtimes used for the demo section of this talk:
 
-- _Serverless_ - Using [**Architect**](https://arc.codes/), a serverless framework for **AWS** 
-- _Edge Functions_ - Powered by [**Netlify** running Deno](https://docs.netlify.com/netlify-labs/experimental-features/edge-functions/)
+- _Serverless_ - Using [**Architect**](https://arc.codes/), a serverless framework for **AWS**.  Code can be found in the _serverless/_ directory.
+- _Edge Functions_ - Powered by [**Netlify** running Deno](https://docs.netlify.com/netlify-labs/experimental-features/edge-functions/). Code can be found in the _netlify/_ directory.
 
 > **Note**: All demos use my project [**wcc**](https://github.com/thescientist13/wcc/) for rendering native custom elements.  It is still a WIP, so some minor refactoring may be ongoing.
 
@@ -39,8 +39,8 @@ There are three paths available for this demo
 
 #### Live
 This demo has two live environments:
-- [Production](https://wc-at-the-edge.thegreenhouse.io/) (used in the presentation)
-- [Preview](https://preview-wc-at-the-edge.thegreenhouse.io/) (preview environment for PRs)
+- [Production](https://wc-at-the-edge.thegreenhouse.io/demo) (used in the presentation)
+- [Preview](https://preview-wc-at-the-edge.thegreenhouse.io/demo) (preview environment for PRs)
 
 #### Local
 To view the demo locally to start Architect's sandbox, run
@@ -57,7 +57,7 @@ There are three paths available for this demo
 
 #### Live
 This demo has two live environments:
-- [Production](https://magnificent-caramel-f19440.netlify.app/) (used in the presentation and shares the same environment)
+- [Production](https://magnificent-caramel-f19440.netlify.app/demo) (used in the presentation and shares the same environment)
 - Preview - For PRs, and will be dependent on PR preview URL.
 
 #### Local

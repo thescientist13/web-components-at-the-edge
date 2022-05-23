@@ -1,7 +1,11 @@
+import arc from '@architect/functions';
 import fetch from 'node-fetch';
 import { renderFromHTML } from 'wc-compiler';
 
 export async function handler () {
+  const cssPath = process.env.NODE_ENV === 'sandbox'
+    ? arc.static('/styles/main.css')
+    : '/styles/main.css';
   const artists = await fetch('https://www.analogstudios.net/api/artists').then(resp => resp.json());
   const { html } = await renderFromHTML(`
     ${artists.map(artist => {
@@ -10,11 +14,10 @@ export async function handler () {
         <h2 slot="title">${artist.name}</h2>
         <img slot="image" src="${artist.imageUrl}" alt="${artist.name}"/>
       </wc-card>
-      <hr/>
     `;
   }).join('')}
   `, [
-    new URL('./card.component.mjs', import.meta.url)
+    new URL('./node_modules/@architect/shared/components/card.mjs', import.meta.url)
   ]);
 
   return {
@@ -30,22 +33,28 @@ export async function handler () {
           <meta charset="UTF-8">
           <meta name="viewport" content="width=device-width, initial-scale=1">
           <title>WC @ The Edge</title>
+          <link rel="stylesheet" href="${cssPath}"/>
           <style>
-            body {
-              width: 70%;
-              margin: 0px auto;
-              text-align: center;
-            }
-            
-            h1 {
+            header {
+              background-color: var(--color-secondary);
+              color: white;
               text-decoration: underline;
+              text-align: center;
+              padding: 15px;
             }
           </style>
         </head>
         <body>
-          <h1>Artists Length: ${artists.length}</h1>
+          <header>
+            <h1>Web Components @ The Edge</h1>
+            <h2>(Demo #2)</h2>
+          </header>
 
-          ${html.replace('<html><head></head><body>', '').replace('</body></html>', '')}
+          <main>
+            ${html.replace('<html><head></head><body>', '').replace('</body></html>', '')}
+
+            <h3>Artists Length: ${artists.length}</h3>
+          </main>
         </body>
       </html>
       `

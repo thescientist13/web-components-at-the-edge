@@ -1,12 +1,15 @@
 import '../../node_modules/wc-compiler/src/dom-shim.js';
 
 import Card from './components/card.js';
+import Header from './components/header.js';
 
 export default async function () {
-  const artists = await fetch('https://www.analogstudios.net/api/artists').then(resp => resp.json());
   const card = new Card();
+  const header = new Header();
+  const artists = await fetch('https://www.analogstudios.net/api/artists').then(resp => resp.json());
 
   card.connectedCallback();
+  header.connectedCallback();
   
   const html = artists.map(artist => {
     return `
@@ -16,7 +19,6 @@ export default async function () {
         <h2 slot="title">${artist.name}</h2>
         <img slot="image" src="${artist.imageUrl}" alt="${artist.name}"/>
       </wc-card>
-      <hr/>
     `;
   }).join('');
 
@@ -28,20 +30,46 @@ export default async function () {
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>WC @ The Edge</title>
         <style>
-          body {
-            width: 70%;
-            margin: 0px auto;
-            text-align: center;
+          :root, :host {
+            --color-primary: rgb(12, 36, 42);
+            --color-secondary: rgb(110, 176, 6);
+            --color-tertiary: rgb(110, 176, 6);
+            --color-accent: rgb(250, 217, 28);
           }
           
-          h1 {
-            text-decoration: underline;
+          * {
+            padding: 0;
+            margin: 0;
+          }
+          
+          body {
+            background-color: var(--color-primary);
+            font-size: 1.5em;
+            font-family: Garamond;
+          }
+          
+          main {
+            min-height: 500px;
+          }
+          
+          h1, h3 {
+            margin: 20px;
+            text-align: center;
+            color: white;
           }
         </style>
       </head>
       <body>
-        <h1>Artists Length: ${artists.length}</h1>
-        ${html}
+        <header>
+          ${header.getInnerHTML({ includeShadowRoots: true })}
+          <h2 slot="demo">(Demo #2)</h2>
+        </header>
+
+        <main>
+          ${html.replace('<html><head></head><body>', '').replace('</body></html>', '')}
+
+          <h3>Artists Length: ${artists.length}</h3>
+        </main>
       </body>
     </html>
   `);

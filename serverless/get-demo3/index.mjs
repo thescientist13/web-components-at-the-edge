@@ -4,15 +4,18 @@ import path from 'path';
 
 export async function handler () {
   const publicRoot = '/';
-  const { html: header, metadata: headerMeta } = await renderToString(new URL('./header.mjs', import.meta.url));
-  const { html: footer } = await renderToString(new URL('./footer.mjs', import.meta.url));
-  const { html: test, metadata: testMetadata } = await renderToString(new URL('./test.mjs', import.meta.url));
+  const cssPath = process.env.NODE_ENV === 'sandbox'
+    ? arc.static('/styles/main.css')
+    : '/styles/main.css';
+  const { html: header, metadata: headerMeta } = await renderToString(new URL('./node_modules/@architect/shared/components/header.mjs', import.meta.url));
+  const { html: footer } = await renderToString(new URL('./node_modules/@architect/shared/components/footer.mjs', import.meta.url));
+  const { html: slider, metadata: sliderMetadata } = await renderToString(new URL('./node_modules/@architect/shared/components/slider.mjs', import.meta.url));
 
   const eagerJs = [];
   const lazyJs = [];
 
-  for (const asset in testMetadata) {
-    const a = testMetadata[asset];
+  for (const asset in sliderMetadata) {
+    const a = sliderMetadata[asset];
 
     a.tagName = asset;
 
@@ -40,6 +43,7 @@ export async function handler () {
           <meta charset="UTF-8">
           <meta name="viewport" content="width=device-width, initial-scale=1">
           <title>WC @ The Edge</title>
+          <link rel="stylesheet" href="${cssPath}"/>
           <style>
             p#spacer {
               height: 2000px;
@@ -48,7 +52,7 @@ export async function handler () {
 
           ${
             eagerJs.map(script => {
-              const file = path.basename(script.moduleURL.pathname).replace('.mjs', '.js');
+              const file = path.basename(script.moduleURL.pathname);
               const publicPath = process.env.NODE_ENV === 'sandbox'
                 ? arc.static(`/components/${file}`)
                 : `${publicRoot}components/${file}`;
@@ -59,7 +63,7 @@ export async function handler () {
         
           ${
             lazyJs.map(script => {
-              const file = path.basename(script.moduleURL.pathname).replace('.mjs', '.js');
+              const file = path.basename(script.moduleURL.pathname);
               const publicPath = process.env.NODE_ENV === 'sandbox'
                 ? arc.static(`/components/${file}`)
                 : `${publicRoot}components/${file}`;
@@ -105,9 +109,9 @@ export async function handler () {
 
           <p id="spacer"></p>
 
-          <wc-test color="green">
-            ${test}
-          </wc-test>
+          <wc-slider color="rgb(250, 217, 28)">
+            ${slider}
+          </wc-slider>
 
           <wc-footer>
             ${footer}
