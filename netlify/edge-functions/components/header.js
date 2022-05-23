@@ -63,10 +63,10 @@ class Header extends HTMLElement {
         </div>
 
         <div class="social">
-          <a href="https://github.com/ProjectEvergreen/wcc" target="_blank" rel="noopener noreferrer">
+          <a href="https://github.com/thescientist13/web-components-at-the-edge" target="_blank" rel="noopener noreferrer">
             <img
-              src="https://img.shields.io/github/stars/ProjectEvergreen/wcc.svg?style=social&logo=github&label=github"
-              alt="WCC GitHub badge"
+              src="https://img.shields.io/github/stars/thescientist13/web-components-at-the-edge.svg?style=social&logo=github&label=github"
+              alt="Presentation repo GitHub badge"
               class="github-badge"/>
           </a>
         </div>
