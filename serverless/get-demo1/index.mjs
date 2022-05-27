@@ -43,7 +43,7 @@ export async function handler () {
               </style>
             
               <header>
-                <h1>Web Components @ The Edge</h1>
+                <h1><a href="https://github.com/thescientist13/web-components-at-the-edge" title="presentation repo" target="_blank" rel="noopener noreferrer">Web Components @ The Edge</a></h1>
                 <h2>(Demo #1)</h2>
               </header>
             </template>

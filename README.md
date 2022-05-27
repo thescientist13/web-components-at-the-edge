@@ -32,7 +32,7 @@ There are two runtimes used for the demo section of this talk:
 > **Note**: All demos use my project [**wcc**](https://github.com/thescientist13/wcc/) for rendering native custom elements.  It is still a WIP, so some minor refactoring may be ongoing.
 
 ### Serverless
-There are three paths available for this demo
+There are three paths available for this demo, all available from the `/demo` path
 - `/demo1` - Basic example
 - `/demo2` - Example with data fetching
 - `/demo3` - Example with progressive hydration
@@ -50,7 +50,7 @@ $ npm demo:serverless
 
 ### Edge
 
-There are three paths available for this demo
+There are three paths available for this demo, all available from the `/demo` path
 - `/demo1` Basic example
 - `/demo2` Example with data fetching
 - `/demo3` Example with geo-location
