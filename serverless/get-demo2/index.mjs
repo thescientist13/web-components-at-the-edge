@@ -3,10 +3,11 @@ import fetch from 'node-fetch';
 import { renderFromHTML } from 'wc-compiler';
 
 export async function handler () {
+  const artists = await fetch('https://www.analogstudios.net/api/artists').then(resp => resp.json());
   const cssPath = process.env.NODE_ENV === 'sandbox'
     ? arc.static('/styles/main.css')
     : '/styles/main.css';
-  const artists = await fetch('https://www.analogstudios.net/api/artists').then(resp => resp.json());
+
   const { html } = await renderFromHTML(`
     ${artists.map(artist => {
     return `
@@ -51,7 +52,7 @@ export async function handler () {
           </header>
 
           <main>
-            ${html.replace('<html><head></head><body>', '').replace('</body></html>', '')}
+            ${html}
 
             <h3>Artists Length: ${artists.length}</h3>
           </main>

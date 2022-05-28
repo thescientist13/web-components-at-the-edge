@@ -4,9 +4,9 @@ import Card from './components/card.js';
 import Header from './components/header.js';
 
 export default async function () {
+  const artists = await fetch('https://www.analogstudios.net/api/artists').then(resp => resp.json());
   const card = new Card();
   const header = new Header();
-  const artists = await fetch('https://www.analogstudios.net/api/artists').then(resp => resp.json());
 
   card.connectedCallback();
   header.connectedCallback();
@@ -66,7 +66,7 @@ export default async function () {
         </header>
 
         <main>
-          ${html.replace('<html><head></head><body>', '').replace('</body></html>', '')}
+          ${html}
 
           <h3>Artists Length: ${artists.length}</h3>
         </main>

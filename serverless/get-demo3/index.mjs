@@ -1,5 +1,5 @@
 import arc from '@architect/functions';
-import { renderToString } from 'wc-compiler';
+import { renderToString, renderFromHTML } from 'wc-compiler';
 import path from 'path';
 
 export async function handler () {
@@ -7,9 +7,15 @@ export async function handler () {
   const cssPath = process.env.NODE_ENV === 'sandbox'
     ? arc.static('/styles/main.css')
     : '/styles/main.css';
+
   const { html: header, metadata: headerMeta } = await renderToString(new URL('./node_modules/@architect/shared/components/header.mjs', import.meta.url));
   const { html: footer } = await renderToString(new URL('./node_modules/@architect/shared/components/footer.mjs', import.meta.url));
-  const { html: slider, metadata: sliderMetadata } = await renderToString(new URL('./node_modules/@architect/shared/components/slider.mjs', import.meta.url));
+  const { html: slider, metadata: sliderMetadata } = await renderFromHTML(`
+    <wc-slider color="var(--color-accent)">
+    </wc-slider>
+  `, [
+    new URL('./node_modules/@architect/shared/components/slider.mjs', import.meta.url)
+  ]);
 
   const eagerJs = [];
   const lazyJs = [];
@@ -101,21 +107,15 @@ export async function handler () {
           }
         </head>
         <body>
-          <wc-header>
-            ${header}
-          </wc-header>
+          ${header}
 
           <h1>Home Page</h1>
 
           <p id="spacer"></p>
 
-          <wc-slider color="rgb(250, 217, 28)">
-            ${slider}
-          </wc-slider>
+          ${slider}
 
-          <wc-footer>
-            ${footer}
-          </wc-footer>
+          ${footer}
         </body>
       </html>
       `
