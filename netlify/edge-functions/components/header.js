@@ -52,7 +52,7 @@ class Header extends HTMLElement {
 
       <header>
         <div>
-          <a href="https://github.com/thescientist13/wcc" target="_blank" rel="noopener noreferrer">
+          <a href="https://github.com/ProjectEvergreen/wcc" target="_blank" rel="noopener noreferrer">
             <img class="logo" src="https://magnificent-caramel-f19440.netlify.app/assets/wcc-logo.png" alt="WCC logo"/>
           </a>
         </div>
