@@ -37,11 +37,13 @@ export default async function handler () {
             color: var(--color-accent);
           }
           
-          ul { 
-            width: 30%;
+          ul {
             margin: 0 auto;
             font-size: 1em;
-          }
+            width: 30%;
+            min-width: 500px;
+            display: block;
+          }          
           
           li { 
             margin: 1em;
