@@ -19,7 +19,7 @@ jobs:
         node-version: ${{ matrix.node }}
     - name: Installing project dependencies
       run: |
-        npm ci
+        npm ci --legacy-peer-deps
     - name: Lint
       run: |
         npm run lint
