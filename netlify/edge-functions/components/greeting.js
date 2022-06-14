@@ -25,32 +25,34 @@ class Greeting extends HTMLElement {
 
       this.attachShadow({ mode: 'open' });
       this.shadowRoot.innerHTML = `
-        <style>
-          h1 {
-            text-align: center;
-            color: var(--color-secondary);
-          }
-      
-          span {
-            color: var(--color-accent);
-            font-style: italic;
-          }
+        <template shadowroot="open">
+          <style>
+            h1 {
+              text-align: center;
+              color: var(--color-secondary);
+            }
+
+            span {
+              color: var(--color-accent);
+              font-style: italic;
+            }
 
 
-          [name="details"] {
-            width: 80%;
-            margin: 0 auto;
-            text-align: center;
-            color: var(--color-accent);
-          }
-        </style>
+            [name="details"] {
+              width: 80%;
+              margin: 0 auto;
+              text-align: center;
+              color: var(--color-accent);
+            }
+          </style>
 
-        <div>
-          <h1>Coming From Country: 
-            <span>${this.countryName} ${flag}<span>
-          </h1>
-          <slot name="details"></slot>
-        </div>
+          <div>
+            <h1>Coming From Country:
+              <span>${this.countryName} ${flag}<span>
+            </h1>
+            <slot name="details"></slot>
+          </div>
+        </template>
       `;
     }
   }
