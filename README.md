@@ -2,7 +2,7 @@
 
 # web-components-at-the-edge
 
-Slides for my virtual track talk at [OpenJS World (2022)](https://events.linuxfoundation.org/openjs-world/) titled [_Web Components at the Edge_](https://sched.co/11loQ).  [Hosted on Netlify](https://practical-goldberg-a5ae74.netlify.app/) and built using [GreenwoodJS](https://github.com/ProjectEvergreen/greenwood) with the [**greenwood-starter-presentation** theme pack plugin](https://github.com/thescientist13/greenwood-starter-presentation/).
+Slides for my virtual track talk at [OpenJS World (2022)](https://events.linuxfoundation.org/openjs-world/) titled [_Web Components at the Edge_](https://sched.co/11loQ).  Video recording is [available on YouTube](https://youtu.be/ba83Zo8kf68).  [Hosted on Netlify](https://practical-goldberg-a5ae74.netlify.app/) and built using [GreenwoodJS](https://github.com/ProjectEvergreen/greenwood) with the [**greenwood-starter-presentation** theme pack plugin](https://github.com/thescientist13/greenwood-starter-presentation/).
 
 > _To operate the deck in full screen, click the "Presenter mode" button and use the left and right arrows keys to navigate through the slides.  Hit `ESC` to exit presenter mode._
 
