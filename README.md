@@ -9,11 +9,10 @@ Slides for my virtual track talk at [OpenJS World (2022)](https://events.linuxfo
 ## Local Setup
 
 If you would like to run this project locally
-1. Have [NodeJS](https://nodejs.org/) LTS installed
+1. Have [NodeJS](https://nodejs.org/) LTS installed (or `nvm use` if you have nvm installed)
 1. Clone or fork this repo
 1. Install dependencies
     ```sh
-    # npm
     $ npm ci
     ```
 
