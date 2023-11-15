@@ -35,7 +35,7 @@
     "@greenwood/cli": "~0.29.0",
     "@mapbox/rehype-prism": "^0.8.0",
     "eslint": "^8.15.0",
-    "greenwood-starter-presentation": "~0.8.0",
+    "greenwood-starter-presentation": "~0.8.1",
     "netlify-cli": "^10.3.1",
     "node-fetch": "^3.2.4",
     "rimraf": "^3.0.2",
